@@ -1,0 +1,50 @@
+[
+    {
+        "imageUrl": "/01-matching-game/assets/cake.png",
+        "imageName": "cake"
+    },
+    {
+        "imageUrl": "/01-matching-game/assets/candy.png",
+        "imageName": "candy"
+    },
+    {
+        "imageUrl": "/01-matching-game/assets/chocolate-bar.png",
+        "imageName": "chocolate-bar"
+    },
+    {
+        "imageUrl": "/01-matching-game/assets/coffee.png",
+        "imageName": "coffee"
+    },
+    {
+        "imageUrl": "/01-matching-game/assets/donut.png",
+        "imageName": "donut"
+    },
+    {
+        "imageUrl": "/01-matching-game/assets/french-fries.png",
+        "imageName": "french-fries"
+    },
+    {
+        "imageUrl": "/01-matching-game/assets/grapes.png",
+        "imageName": "grapes"
+    },
+    {
+        "imageUrl": "/01-matching-game/assets/green-apple.png",
+        "imageName": "green-apple"
+    },
+    {
+        "imageUrl": "/01-matching-game/assets/hamburger.png",
+        "imageName": "hamburger"
+    },
+    {
+        "imageUrl": "/01-matching-game/assets/ice-cream.png.png",
+        "imageName": "hamburger"
+    },
+    {
+        "imageUrl": "/01-matching-game/assets/milk.png.png",
+        "imageName": "hamburger"
+    },
+    {
+        "imageUrl": "/01-matching-game/assets/salad.png.png",
+        "imageName": "hamburger"
+    }
+]

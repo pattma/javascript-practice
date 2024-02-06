@@ -1,0 +1,58 @@
+@import url('https://fonts.cdnfonts.com/css/doingwise');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Doingwise', sans-serif;
+  background-color: #898bff;
+  width: 1150px;
+  margin: 0 auto;
+}
+
+/* First section */
+.welcome {
+  padding: 32px 32px 16px;
+  text-align: center;
+  font-size: 2.3rem;
+}
+
+/* Second section */
+.guide {
+  padding: 0 32px 16px;
+  font-size: 1.7rem;
+}
+
+.guide details {
+  margin: 0 20%;
+}
+
+.guide summary {
+  font-weight: 700;
+}
+
+.how-to-play {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  list-style-position: inside;
+  font-size: 1.5rem;
+  gap: 16px;
+}
+
+.how-to-play li {
+  margin: 0 8px 0 32px;
+}
+
+/* Third section */
+.game {
+  
+}
+
+/* back */
+/* background-color: #413da0; */
+/* front */
+/* background-color: #aeafe8; */
