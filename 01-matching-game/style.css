@@ -1,4 +1,4 @@
-@import url('https://fonts.cdnfonts.com/css/doingwise');
+@import url("https://fonts.cdnfonts.com/css/doingwise");
 
 * {
   padding: 0;
@@ -7,23 +7,21 @@
 }
 
 body {
-  font-family: 'Doingwise', sans-serif;
+  font-family: "Doingwise", sans-serif;
   background-color: #898bff;
-  width: 1150px;
   margin: 0 auto;
 }
 
-/* First section */
-.welcome {
-  padding: 32px 32px 16px;
+h1 {
   text-align: center;
   font-size: 2.3rem;
+  margin-top: 16px;
 }
 
-/* Second section */
+/* First section */
 .guide {
-  padding: 0 32px 16px;
   font-size: 1.7rem;
+  padding: 16px 22%;
 }
 
 .guide details {
@@ -44,15 +42,77 @@ body {
 }
 
 .how-to-play li {
-  margin: 0 8px 0 32px;
+  margin-left: 32px;
 }
 
-/* Third section */
-.game {
-  
+/* Second section */
+.board-game {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(6, 100px);
+  gap: 10px;
 }
 
-/* back */
-/* background-color: #413da0; */
-/* front */
-/* background-color: #aeafe8; */
+.card {
+  position: relative;
+  width: 100px;
+  height: 140px;
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+}
+
+.flip-card {
+  transform: rotateY(180deg);
+}
+
+.front-side, 
+.back-side {
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.front-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #aeafe8;
+  transform: rotateY(180deg);
+}
+
+.back-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #413da0;
+  backface-visibility: hidden;
+}
+
+.front-image,
+.back-image {
+  width: 70px;
+  height: 70px;
+}
+
+/* Button */
+.btn {
+  display: flex;
+  justify-content: center;
+  padding: 16px 0;
+}
+
+.btn button {
+  background-color: #5350ad;
+  padding: 12px 20px;
+  border-radius: 12px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.btn button:hover {
+  background-color: #4845b1;
+}

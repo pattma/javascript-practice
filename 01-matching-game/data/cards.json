@@ -1,50 +1,50 @@
 [
     {
-        "imageUrl": "/01-matching-game/assets/cake.png",
-        "imageName": "cake"
+        "imageName": "cake",
+        "imageUrl": "/01-matching-game/assets/cake.png"
     },
     {
-        "imageUrl": "/01-matching-game/assets/candy.png",
-        "imageName": "candy"
+        "imageName": "candy",
+        "imageUrl": "/01-matching-game/assets/candy.png"
     },
     {
-        "imageUrl": "/01-matching-game/assets/chocolate-bar.png",
-        "imageName": "chocolate-bar"
+        "imageName": "chocolate-bar",
+        "imageUrl": "/01-matching-game/assets/chocolate-bar.png"
     },
     {
-        "imageUrl": "/01-matching-game/assets/coffee.png",
-        "imageName": "coffee"
+        "imageName": "coffee",
+        "imageUrl": "/01-matching-game/assets/coffee.png"
     },
     {
-        "imageUrl": "/01-matching-game/assets/donut.png",
-        "imageName": "donut"
+        "imageName": "donut",
+        "imageUrl": "/01-matching-game/assets/donut.png"
     },
     {
-        "imageUrl": "/01-matching-game/assets/french-fries.png",
-        "imageName": "french-fries"
+        "imageName": "french-fries",
+        "imageUrl": "/01-matching-game/assets/french-fries.png"
     },
     {
-        "imageUrl": "/01-matching-game/assets/grapes.png",
-        "imageName": "grapes"
+        "imageName": "grapes",
+        "imageUrl": "/01-matching-game/assets/grapes.png"
     },
     {
-        "imageUrl": "/01-matching-game/assets/green-apple.png",
-        "imageName": "green-apple"
+        "imageName": "green-apple",
+        "imageUrl": "/01-matching-game/assets/green-apple.png"
     },
     {
-        "imageUrl": "/01-matching-game/assets/hamburger.png",
-        "imageName": "hamburger"
+        "imageName": "hamburger",
+        "imageUrl": "/01-matching-game/assets/hamburger.png"
     },
     {
-        "imageUrl": "/01-matching-game/assets/ice-cream.png.png",
-        "imageName": "hamburger"
+        "imageName": "ice-cream",
+        "imageUrl": "/01-matching-game/assets/ice-cream.png"
     },
     {
-        "imageUrl": "/01-matching-game/assets/milk.png.png",
-        "imageName": "hamburger"
+        "imageName": "milk",
+        "imageUrl": "/01-matching-game/assets/milk.png"
     },
     {
-        "imageUrl": "/01-matching-game/assets/salad.png.png",
-        "imageName": "hamburger"
+        "imageName": "salad",
+        "imageUrl": "/01-matching-game/assets/salad.png"
     }
 ]
