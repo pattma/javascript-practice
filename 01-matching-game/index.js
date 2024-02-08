@@ -1,35 +1,40 @@
 const gridCard = document.querySelector(".board-game");
 let cards = [];
 let firstCard, secondCard;
-let isPlaying = false;
+let isBoardActive = false; // To prevent clicking on cards while checking for matches or flipping cards
 
-fetch("./data/cards.json")
-  .then((res) => res.json())
-  .then((data) => {
+// Fetch card data
+const fetchCardData = async () => {
+  try {
+    const response = await fetch("./data/cards.json");
+    const data = await response.json();
     cards = [...data, ...data];
     shuffleCard();
     generateCard();
-  });
-
-function shuffleCard() {
-  let currentIndex = cards.length, randomIndex, tempValue;
-  while (currentIndex !== 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-    tempValue = cards[currentIndex];
-    cards[currentIndex] = cards[randomIndex];
-    cards[randomIndex] = tempValue;
+  } catch (error) {
+    console.error("Error fetching card data:", error);
   }
 }
 
-function generateCard() {
-  for (let card of cards) {
+// Shuffle cards
+const shuffleCard = async () => {
+  let currentIndex = cards.length;
+  while (currentIndex !== 0) {
+    const randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    [cards[currentIndex], cards[randomIndex]] = [cards[randomIndex], cards[currentIndex]];
+  }
+}
+
+// Generate cards (using for...of loop and template literals)
+const generateCard = async () => {
+  for (const card of cards) {
     const cardItem = document.createElement("div");
     cardItem.classList.add("card");
     cardItem.setAttribute("data-name", card.imageName);
     cardItem.innerHTML = `
       <div class="front-side">
-        <img class="front-image" src=${card.imageUrl} alt="front" />
+        <img class="front-image" src=${card.imageUrl} />
       </div>
       <div class="back-side">
         <img class="front-image" src="/01-matching-game/assets/cutlery-spoon.png" alt="back" />
@@ -40,8 +45,9 @@ function generateCard() {
   }
 }
 
-function flipCard() {
-  if (isPlaying) return;
+// Event listener for card click
+const flipCard = function () {
+  if (!isBoardActive) return;
   if (this === firstCard) return;
 
   this.classList.add("flip-card");
@@ -52,38 +58,58 @@ function flipCard() {
   }
   
   secondCard = this;
-  isPlaying = true;
+  isBoardActive = false; // Lock the board to prevent further clicks during processing
   matchCard();
-}
+};
 
-function matchCard() {
+// Check for match cards (using ternary operator)
+const matchCard = () => {
   let isMatch = firstCard.dataset.name === secondCard.dataset.name;
-  isMatch ? disableCard() : unflipCards();
+  isMatch ? disableCard() : unflipCard();
 }
 
-function disableCard() {
-  firstCard.removeEventListener("click", flipCard);
-  secondCard.removeEventListener("click", flipCard);
+// Disable cards (using array destructuring)
+const disableCard = () => {
+  [firstCard, secondCard].forEach(card => {
+    card.removeEventListener("click", flipCard);
+    card.style.visibility = "hidden"; // Hide the matched cards
+  });
   resetBoard();
-}
+};
 
-function unflipCards() {
+// Unflip cards (using setTimeout)
+const unflipCard = () => {
   setTimeout(() => {
-    firstCard.classList.remove("flip-card");
-    secondCard.classList.remove("flip-card");
+    [firstCard, secondCard].forEach(card => {
+      card.classList.remove("flip-card");
+      card.style.visibility = "visible"; // Make the cards visible again
+    });
     resetBoard();
   }, 1000);
-}
+};
 
-function resetBoard() {
-  firstCard = null;
-  secondCard = null;
-  isPlaying = false;
-}
+// Reset board
+const resetBoard = () => {
+  [firstCard, secondCard] = [null, null];
+  isBoardActive = true; // Unlock the board for the next round of clicks
 
-function restart() {
-  resetBoard();
+  // To ensure cards are shuffled only after the initial load
+  if (cards.length === 0) {
+    shuffleCards();
+    generateCards();
+  }
+};
+
+// Restart game
+const restart = () => {
+  resetBoard(); // To clear variables and unlock the board
   shuffleCard();
-  gridCard.innerHTML = "";
+  gridCard.innerHTML = ""; // To clear the content of the grid container
   generateCard();
-}
+};
+
+// Event listener for window load to initialize the game
+window.addEventListener('load', () => {
+  fetchCardData(); // Initialize the game
+  resetBoard();    // Reset the board and shuffle the cards
+});
